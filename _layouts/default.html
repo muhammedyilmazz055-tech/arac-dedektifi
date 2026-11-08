@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{% seo %}
+{% feed_meta %}
+<link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+{% if page.faq %}<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{% for q in page.faq %}{"@type":"Question","name":{{ q.s | jsonify }},"acceptedAnswer":{"@type":"Answer","text":{{ q.c | jsonify }}}}{% unless forloop.last %},{% endunless %}{% endfor %}]}</script>{% endif %}
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="{{ '/' | relative_url }}">🔎 Araç <b>Dedektifi</b></a>
+  <nav><a href="{{ '/' | relative_url }}">Fırsatlar</a><a href="{{ '/fiyat/' | relative_url }}">Fiyat Rehberi</a>
+  <a class="btn sm" href="{{ site.telegram_bot }}?start=AD_blog">Ücretsiz Katıl</a></nav>
+</div></header>
+<main class="wrap">{{ content }}</main>
+<section class="cta wrap">
+  <h2>Fırsatları herkesten önce gör</h2>
+  <p>Piyasanın altındaki ilanlar dakikalar içinde satılıyor. Telegram kanalımızda ilan linkleriyle anlık bildirim alırsın. Ücretsiz.</p>
+  <a class="btn" href="{{ site.telegram_bot }}?start=AD_blog">📲 Telegram'da Ücretsiz Katıl</a>
+</section>
+<footer class="wrap foot">© {{ 'now' | date: '%Y' }} Araç Dedektifi · Fiyatlar kamuya açık ilan verilerinden derlenir, bilgi amaçlıdır; satın almadan önce aracı ekspertizden geçirin.</footer>
+</body>
+</html>

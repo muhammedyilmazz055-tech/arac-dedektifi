@@ -1,0 +1,9 @@
+---
+layout: default
+---
+<article class="post">
+  <p class="meta">{{ page.date | date: "%d.%m.%Y" }}</p>
+  <h1>{{ page.title }}</h1>
+  {% if page.video %}<video class="hero" src="{{ page.video | relative_url }}" poster="{{ page.image | relative_url }}" controls playsinline preload="none"></video>{% endif %}
+  {{ content }}
+</article>

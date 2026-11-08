@@ -1,0 +1,23 @@
+title: Araç Dedektifi
+description: Türkiye'de piyasanın altındaki ikinci el araç fırsatları ve güncel model fiyat rehberi. Her gün yüzlerce ilan taranır, en iyileri seçilir.
+lang: tr_TR
+url: "https://muhammedyilmazz055-tech.github.io"
+baseurl: "/arac-dedektifi"
+timezone: Europe/Istanbul
+permalink: /:year/:month/:day/:title/
+telegram_bot: https://t.me/dedektiff_bot
+telegram_channel: https://t.me/aracdedektifi
+# Search Console / Yandex Webmaster doğrulama kodlarını buraya yapıştır:
+webmaster_verifications:
+  google: ""
+  yandex: ""
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-feed
+exclude: [README.md]
+defaults:
+  - scope: {path: "", type: posts}
+    values: {layout: post}
+  - scope: {path: "fiyat"}
+    values: {layout: default}
